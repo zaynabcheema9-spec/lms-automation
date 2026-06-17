@@ -49,7 +49,24 @@ def load_completed():
 # ========================
 with sync_playwright() as p:
 
-    browser = p.chromium.launch(headless=False)
+    import os
+from playwright.sync_api import sync_playwright
+
+with sync_playwright() as p:
+    # Check if script is running on GitHub Actions
+    is_github = os.getenv("GITHUB_ACTIONS") == "true"
+
+    browser = p.chromium.launch(
+        headless=is_github
+    )
+
+    page = browser.new_page()
+
+    # Tumhara baki code yahan
+    # page.goto(...)
+    # ...
+
+    browser.close()
     context = browser.new_context(accept_downloads=True)
     page = context.new_page()
 
