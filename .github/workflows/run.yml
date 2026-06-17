@@ -2,8 +2,8 @@ name: LMS Automation Bot
 
 on:
   schedule:
-    - cron: "0 8 * * *"   # daily at 8 AM UTC
-  workflow_dispatch:       # manual run button
+    - cron: '0 8 * * *'
+  workflow_dispatch:
 
 jobs:
   run-script:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: '3.10'
 
       - name: Install dependencies
         run: |
