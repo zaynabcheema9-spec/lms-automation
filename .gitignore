@@ -1,0 +1,12 @@
+# environment
+.env
+
+# downloads
+Downloads/
+
+# cache
+__pycache__/
+*.pyc
+
+# logs (optional)
+download_log.txt
